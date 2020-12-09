@@ -33,7 +33,7 @@ namespace Oop_Exam
             var urun = Urun.GetAll().FirstOrDefault();
             if (urun != null)
             {
-                urun.Delete();
+                urun.Delete(60);
             }
             urunleriBas();
 
@@ -69,7 +69,7 @@ namespace Oop_Exam
             var uruns = Urun.GetAll();
             foreach (var item in uruns)
             {
-                item.Delete();
+                item.DeleteAll();
             }
         }
         public static void urunleriBas()

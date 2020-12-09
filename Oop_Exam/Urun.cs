@@ -72,7 +72,18 @@ namespace Oop_Exam
             komut.ExecuteNonQuery();
             con.Close();
         }
-        public void Delete()
+        public void Delete(int id)
+        {
+            if (id <= 0) return;
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            var komut = new SqlCommand();
+            komut.Connection = con;
+            komut.CommandText = $@"DELETE FROM [dbo].[Urun] WHERE ID={id};";
+            komut.ExecuteNonQuery();
+            con.Close();
+        }
+        public void DeleteAll()
         {
             if (id <= 0) return;
             SqlConnection con = new SqlConnection(connectionString);
