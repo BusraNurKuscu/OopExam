@@ -25,6 +25,7 @@ namespace Oop_Exam
     {
         static void Main(string[] args)
         {
+
             urunleriTemizle();
             urunleriEkle();
             urunleriBas();
@@ -37,9 +38,6 @@ namespace Oop_Exam
             }
             urunleriBas();
 
-
-
-
             Console.WriteLine("\nGüncelleme");
             urun = Urun.GetAll().FirstOrDefault();
             if (urun != null)
@@ -50,8 +48,9 @@ namespace Oop_Exam
             urunleriBas();
 
             Console.ReadLine();
-
         }
+
+
         public static void urunleriEkle()
         {
             new Urun("Sampuan", 12, 33, "Temizlik").InsertOrUpdate();
